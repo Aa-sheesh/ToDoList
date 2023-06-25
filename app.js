@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _=require("lodash");
+mongoose.set('useFindAndModify', false);
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1/todolistDB", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://aashish:peedhu483@cluster0.b2sbzcu.mongodb.net/todolistDB", { useNewUrlParser: true });
 const itemsSchema = {
     name: String
 };
